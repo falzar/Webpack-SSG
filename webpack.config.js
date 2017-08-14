@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 const extractSass = new ExtractTextPlugin({
   // filename: '[name].[contenthash].css',
@@ -69,7 +70,8 @@ module.exports = {
   },
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -77,6 +79,7 @@ module.exports = {
     // https://github.com/jantimon/html-webpack-plugin
     new HtmlWebpackPlugin({
       title: 'Webpack SSG'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
