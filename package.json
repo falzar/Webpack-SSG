@@ -4,16 +4,18 @@
   "description": "A static site generator for webpack",
   "main": "main.js",
   "scripts": {
-    "build": "rm -rf dist && webpack"
+    "build": "webpack"
   },
   "author": "Robert Guss",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.3.1",
     "lost": "^8.2.0",
     "node-sass": "^4.5.3",

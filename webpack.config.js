@@ -1,6 +1,8 @@
 'use strict';
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const extractSass = new ExtractTextPlugin({
@@ -12,7 +14,7 @@ const extractSass = new ExtractTextPlugin({
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: './js/bundle.js',
+    filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'source-map',
@@ -66,6 +68,10 @@ module.exports = {
     ]
   },
   plugins: [
-    extractSass
+    new CleanWebpackPlugin(['dist']),
+    extractSass,
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
   ]
 };
