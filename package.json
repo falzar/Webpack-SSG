@@ -1,0 +1,20 @@
+{
+  "name": "webpack-ssg",
+  "version": "1.0.0",
+  "description": "A static site generator for webpack",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Robert Guss",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
