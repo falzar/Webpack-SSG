@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/scss/src/scss/main.scss"],"names":[],"mappings":"AAEA;EACE,oBAHa,EAId","file":"main.css","sourcesContent":["$black: #000000;\n\nbody {\n  background: $black;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/scss/src/scss/main.scss"],"sourceRoot":""}
