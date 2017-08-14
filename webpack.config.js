@@ -8,8 +8,8 @@ const path = require('path');
 const webpack = require('webpack');
 
 const extractSass = new ExtractTextPlugin({
-  // filename: '[name].[contenthash].css',
-  filename: './css/[name].css',
+  filename: './css/[name].[contenthash].css',
+  // filename: './css/[name].css',
   disable: process.env.NODE_ENV === 'development'
 });
 
