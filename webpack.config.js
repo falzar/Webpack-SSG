@@ -4,12 +4,13 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
 const extractSass = new ExtractTextPlugin({
-  filename: './css/[name].[contenthash].css',
-  // filename: './css/[name].css',
+  // filename: './css/[name].[contenthash].css',
+  filename: './css/[name].css',
   disable: process.env.NODE_ENV === 'development'
 });
 
@@ -78,9 +79,15 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     extractSass,
     // https://github.com/jantimon/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/views/index.html'
+    // new HtmlWebpackPlugin({
+      // filename: 'index.html',
+      // template: './src/views/index.html'
+    // }),
+    new NunjucksWebpackPlugin({
+      template: {
+        from: './src/views/index/index.njk',
+        to: 'index.html'
+      }
     }),
     new webpack.HotModuleReplacementPlugin(),
     // https://www.npmjs.com/package/browser-sync-webpack-plugin
@@ -89,10 +96,10 @@ module.exports = {
       // browse to http://localhost:3000/ during development,
       host: 'localhost',
       port: 3000,
-      files: ['src/views/**/*.html'],
+      files: ['src/views/**/*.njk'],
       // server: { baseDir: ['src/views', 'dist'] },
       proxy: 'http://localhost:8080/',
-      open: false
+      open: true
     }, {reload: false})
   ]
 };

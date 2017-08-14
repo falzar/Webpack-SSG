@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="humans.txt" />
+    <title>Yo Gulp Starter</title>
+
+    <!-- FAVICON ICONS -->
+    <!-- Generate using http://realfavicongenerator.net/ -->
+
+    <link rel="stylesheet" href="/main.css">
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {# include "templates/_partials/_navigation.html" #}
+      {% block content %}{% endblock %}
+    {# include "templates/_partials/_footer.html" #}
+
+    {# include "templates/_partials/_analytics.html" #}
+
+    <!-- jQuery 3-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>
