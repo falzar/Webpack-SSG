@@ -17,7 +17,7 @@ module.exports = {
     filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -67,11 +67,16 @@ module.exports = {
       }
     ]
   },
+  // https://webpack.js.org/configuration/dev-server/
+  devServer: {
+    contentBase: './dist'
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     extractSass,
+    // https://github.com/jantimon/html-webpack-plugin
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'Webpack SSG'
     })
   ]
 };

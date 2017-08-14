@@ -4,7 +4,8 @@
   "description": "A static site generator for webpack",
   "main": "main.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
   },
   "author": "Robert Guss",
   "license": "MIT",
@@ -24,7 +25,8 @@
     "rucksack-css": "^1.0.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.4"
+    "webpack": "^3.5.4",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
     "lodash": "^4.17.4"
